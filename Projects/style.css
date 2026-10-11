@@ -1,0 +1,20 @@
+.Bhaii{
+    display: flex;
+    color: blue;
+    background-color: red;
+    padding: 0px;
+    justify-content: space-between;
+    
+    
+}
+.kartheek{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    align-items: center;
+    padding-right: 20px;
+
+    
+
+
+}
