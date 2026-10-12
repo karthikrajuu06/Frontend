@@ -1,54 +1,338 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Rapido - Bike Taxi, Auto & Cab</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-    <nav class="navbar bg-body-tertiary fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Rapido</a>
-    <img src="https://www.rapido.bike/assets/images/rapido-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand logo" href="#home">
+                rapido<span>.</span>
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</nav>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Our Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#safety">Safety</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn download-btn" href="#download">
+                            Download App
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+                    <p class="eyebrow">YOUR CITY. YOUR RIDE.</p>
+
+                    <h1>
+                        India's ride.<br>
+                        <span>Your way.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Get where you need to go with Rapido.
+                        Quick, convenient and affordable rides
+                        for your everyday journeys.
+                    </p>
+
+                    <!-- Ride Form -->
+                    <div class="ride-card">
+                        <h3>Book a ride</h3>
+                        <p class="form-subtitle">
+                            Enter your pickup and destination
+                        </p>
+
+                        <form id="rideForm">
+                            <div class="location-field">
+                                <span class="location-dot pickup-dot"></span>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="pickup"
+                                    placeholder="Enter pickup location"
+                                    required>
+                            </div>
+
+                            <div class="location-line"></div>
+
+                            <div class="location-field">
+                                <span class="location-dot destination-dot"></span>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="destination"
+                                    placeholder="Enter destination"
+                                    required>
+                            </div>
+
+                            <button class="btn ride-btn w-100" type="submit">
+                                Find my ride
+                            </button>
+
+                            <p id="rideMessage" class="ride-message"
+                                aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <div class="yellow-circle"></div>
+
+                        <div class="floating-tag tag-top">
+                            <span>⚡</span> Quick rides
+                        </div>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=85"
+                            alt="Motorcycle ready for a city ride"
+                            class="hero-image">
+
+                        <div class="floating-tag tag-bottom">
+                            <span>✓</span> Your ride, your way
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section section-padding" id="services">
+        <div class="container">
+            <div class="section-heading text-center">
+                <p class="eyebrow">MOVE YOUR WAY</p>
+                <h2>One app. <span>Many rides.</span></h2>
+                <p>Choose a ride that suits your journey.</p>
+            </div>
+
+            <div class="row g-4 mt-3">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon bike-icon">🏍️</div>
+                        <h3>Bike Taxi</h3>
+                        <p>
+                            Beat the traffic and get to your
+                            destination with a convenient bike ride.
+                        </p>
+                        <a href="#download">Explore rides →</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon auto-icon">🛺</div>
+                        <h3>Auto</h3>
+                        <p>
+                            A convenient choice for everyday
+                            travel around your city.
+                        </p>
+                        <a href="#download">Explore rides →</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon cab-icon">🚕</div>
+                        <h3>Cab</h3>
+                        <p>
+                            Enjoy a comfortable ride for
+                            your daily plans and longer trips.
+                        </p>
+                        <a href="#download">Explore rides →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section-padding" id="about">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="about-art">
+                        <div class="about-yellow-circle"></div>
+                        <div class="about-content">
+                            <span class="about-star">✦</span>
+                            <h2>Everyday travel.<br>Made simpler.</h2>
+                            <p>Move freely. Go confidently.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <p class="eyebrow">ABOUT RAPIDO</p>
+                    <h2 class="about-heading">
+                        Your journey<br>starts <span>here.</span>
+                    </h2>
+                    <p class="about-description">
+                        Whether you're heading to work, meeting
+                        friends or exploring your city, find a
+                        ride that fits your everyday needs.
+                    </p>
+
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <h4>Convenient travel</h4>
+                            <p>Options for different kinds of journeys.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <h4>Easy to get started</h4>
+                            <p>Choose your ride and plan your trip.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section class="safety-section section-padding" id="safety">
+        <div class="container">
+            <div class="safety-card">
+                <div>
+                    <p class="eyebrow">TRAVEL WITH CARE</p>
+                    <h2>Your journey<br>matters.</h2>
+                    <p>
+                        Learn about ride guidelines and safety
+                        practices before you travel.
+                    </p>
+                    <a href="https://www.rapido.bike/Home"
+                        class="btn safety-btn">
+                        Visit Rapido
+                    </a>
+                </div>
+
+                <div class="safety-symbol">✓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section section-padding" id="download">
+        <div class="container text-center">
+            <p class="eyebrow">READY TO GO?</p>
+            <h2>Let's get you <span>moving.</span></h2>
+            <p>Explore Rapido's ride options on the official website.</p>
+            <a href="https://www.rapido.bike/Home"
+                class="btn download-main-btn">
+                Explore Rapido
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <a class="footer-logo" href="#home">rapido<span>.</span></a>
+                    <p class="footer-description">
+                        Your everyday ride companion.
+                    </p>
+                </div>
+
+                <div class="col-6 col-md-2">
+                    <h5>Explore</h5>
+                    <a href="#home">Home</a>
+                    <a href="#services">Our Services</a>
+                    <a href="#about">About Us</a>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <h5>Information</h5>
+                    <a href="#safety">Safety</a>
+                    <a href="https://www.rapido.bike/Home">Official Website</a>
+                    <a href="https://www.rapido.bike/Home">Contact</a>
+                </div>
+
+                <div class="col-md-3">
+                    <h5>Ride with Rapido</h5>
+                    <p>Discover ride options for your city.</p>
+                    <a href="#download">Get started →</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Rapido homepage practice project.</p>
+                <p>Independent frontend recreation for learning.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- Small interaction using vanilla JavaScript -->
+    <script>
+        const rideForm = document.getElementById("rideForm");
+        const rideMessage = document.getElementById("rideMessage");
+
+        rideForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const pickup = document.getElementById("pickup").value.trim();
+            const destination = document.getElementById("destination").value.trim();
+
+            if (pickup.toLowerCase() === destination.toLowerCase()) {
+                rideMessage.textContent =
+                    "Please enter two different locations.";
+                return;
+            }
+
+            rideMessage.textContent =
+                "Demo only: booking is not connected to Rapido services.";
+        });
+    </script>
+
 </body>
 </html>
