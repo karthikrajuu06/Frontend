@@ -19,5 +19,5 @@ function fun()
      {
         cards += card;
      }
-     ref
+     ref.innerHTML = cards;
 }
