@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Size</title>
+</head>
+<body>
+
+    <h2 id="text">Welcome TO my World</h2>
+
+    <button onclick="makeBig()">Big</button>
+    <button onclick="makeSmall()">Small</button>
+    <button onclick="resetSize()">Reset</button>
+
+    <script>
+        function makeBig() {
+            document.getElementById("text").style.fontSize = "40px";
+        }
+
+        function makeSmall() {
+            document.getElementById("text").style.fontSize = "12px";
+        }
+
+        function resetSize() {
+            document.getElementById("text").style.fontSize = "24px";
+        }
+    </script>
+
+</body>
+</html>
