@@ -3,10 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Registration Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333333;
+            text-transform: uppercase;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555555;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="password"],
+        .form-group input[type="date"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333333;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #4caf50;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            font-weight: normal;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        .btn-submit {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 480px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    
+
+<div class="form-container">
+    <h2>Student Registration</h2>
+    <form action="/submit_registration" method="POST" enctype="multipart/form-data">
+        
+        <!-- Full Name -->
+        <div class="form-row">
+            <div class="form-group">
+                <label prejudices for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first_name" placeholder="John" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last_name" placeholder="Doe" required>
+            </div>
+        </div>
+
+        <!-- Email & Phone -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+            </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password">Create Password *</label>
+            <input type="password" id="password" name="password" minlength="8" placeholder="Minimum 8 characters" required>
+        </div>
+
+        <!-- Date of Birth & Gender -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label>Gender *</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="male" required> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="other"> Other</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Selection -->
+        <div class="form-group">
+            <label for="course">Select Course *</label>
+            <select id="course" name="course" required>
+                <option value="" disabled selected>-- Select a Course --</option>
+                <option value="computer-science">Computer Science</option>
+                <option value="information-technology">Information Technology</option>
+                <option value="business-administration">Business Administration</option>
+                <option value="mechanical-engineering">Mechanical Engineering</option>
+            </select>
+        </div>
+
+        <!-- Upload Photo -->
+        <div class="form-group">
+            <label for="photo">Upload Profile Photo</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+            <label for="address">Permanent Address</label>
+            <textarea id="address" name="address" placeholder="Enter your full street address..."></textarea>
+        </div>
+
+        <!-- Terms and Conditions -->
+        <div class="form-group">
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the terms and conditions *</label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit">Register Student</button>
+
+    </form>
+</div>
+
 </body>
 </html>
