@@ -2,11 +2,117 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding HTML Lists</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            background-color: #ecf0f1;
+            padding: 5px 10px;
+            border-left: 5px solid #3498db;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #c7254e;
+        }
+        .explanation {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <p>lorem ipsum dolor sit amet</p>
+
+<div class="container">
+    <h1>Working with HTML Lists</h1>
+    <p>This page demonstrates how different types of lists work in HTML, their tags, and how they render in the browser.</p>
+
+    <!-- 1. UNORDERED LIST -->
+    <h2>1. Unordered List (<code>&lt;ul&gt;</code>)</h2>
+    <p class="explanation">Used when the order of items does not matter. Items are marked with bullets by default.</p>
     
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+    </ul>
+
+    <!-- 2. ORDERED LIST -->
+    <h2>2. Ordered List (<code>&lt;ol&gt;</code>)</h2>
+    <p class="explanation">Used when the sequence of items is important. Items are automatically numbered.</p>
+    
+    <ol>
+        <li>Step 1: Gather ingredients</li>
+        <li>Step 2: Mix them in a bowl</li>
+        <li>Step 3: Bake for 20 minutes</li>
+    </ol>
+
+    <h3>Ordered List Custom Attributes</h3>
+    <p class="explanation">You can use the <code>type</code> attribute to change the numbering style (e.g., Roman numerals, letters).</p>
+    
+    <ol type="I">
+        <li>Introduction (Uppercase Roman)</li>
+        <li>Body Paragraph</li>
+        <li>Conclusion</li>
+    </ol>
+
+    <!-- 3. DESCRIPTION LIST -->
+    <h2>3. Description List (<code>&lt;dl&gt;</code>)</h2>
+    <p class="explanation">Used to define terms and descriptions, functioning like a dictionary or key-value glossary.</p>
+    
+    <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language, the standard language for creating web pages.</dd>
+        
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets, used to style and layout web pages.</dd>
+    </dl>
+
+    <!-- 4. NESTED LIST -->
+    <h2>4. Nested List</h2>
+    <p class="explanation">You can place a list inside a list item (<code>&lt;li&gt;</code>) to create subcategories or hierarchical levels.</p>
+    
+    <ul>
+        <li>Fruits
+            <ul>
+                <li>Mango</li>
+                <li>Strawberry</li>
+            </ul>
+        </li>
+        <li>Vegetables
+            <ul>
+                <li>Carrot</li>
+                <li>Broccoli</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
 </body>
 </html>
